@@ -5,6 +5,7 @@
   --logo-black-color: #000000;
   --tel-color: #757575;
   --footer-address-color: rgba(255, 255, 255, 0.6);
+  --footer-bg-soc: rgba(255, 255, 255, 0.1);
   --background-black: #2f303a;
   --background-portfolio-nav: #f5f4fa;
   --background-button: #188ce8;
@@ -212,6 +213,33 @@ img {
   flex-basis: calc((100% - 90px) / 4);
 }
 
+.features li::before {
+  display: block;
+  height: 120px;
+  margin-bottom: 30px;
+  content: "";
+  background-color: var(--background-portfolio-nav);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70px;
+}
+
+.features li:nth-child(1)::before {
+  background-image: url(../images/antenna.svg);
+}
+
+.features li:nth-child(2)::before {
+  background-image: url(../images/clock.svg);
+}
+
+.features li:nth-child(3)::before {
+  background-image: url(../images/diagram.svg);
+}
+
+.features li:nth-child(4)::before {
+  background-image: url(../images/astronaut.svg);
+}
+
 .features h3 {
   font-weight: 700;
   font-size: 14px;
@@ -391,9 +419,62 @@ img {
   padding-bottom: 60px;
 }
 
+.footer .container {
+  display: flex;
+}
+
+.footer-contact {
+  margin-right: 70px;
+}
+
 .footer .logo {
   display: inline-block;
   margin-bottom: 20px;
+}
+
+.footer h3 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--main-white-color);
+  margin-bottom: 20px;
+  padding-top: 12px;
+}
+
+.footer-soc-list li:nth-child(1) {
+  background-image: url(../images/instagram.svg);
+}
+
+.footer-soc-list li:nth-child(2) {
+  background-image: url(../images/twitter.svg);
+}
+
+.footer-soc-list li:nth-child(3) {
+  background-image: url(../images/facebook.svg);
+}
+
+.footer-soc-list li:nth-child(4) {
+  background-image: url(../images/linkedin.svg);
+}
+
+.footer-soc-list li {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--footer-bg-soc);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+}
+
+.footer-soc-list {
+  display: flex;
+  gap: 10px;
 }
 
 .address {
@@ -426,4 +507,9 @@ img {
 .address-contacts:hover,
 .address-contacts:focus {
   color: var(--main-blue-color);
+}
+
+.footer-soc-list li:hover,
+.footer-soc-list li:focus {
+  background-color: var(--main-blue-color);
 }
