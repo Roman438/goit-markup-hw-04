@@ -10,7 +10,7 @@
   --background-portfolio-nav: #f5f4fa;
   --background-button: #188ce8;
   --background-color-hero: #c4c4c4c4;
-  /* --border-color: #eeeeee; */
+  --portfolio-border-color: #eeeeee;
   --header-border-color: #ececec;
   --border-color: #afb1b8;
 }
@@ -130,11 +130,17 @@ img {
 }
 
 .tel-mail {
+  display: flex;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: var(--tel-color);
+  align-items: center;
+}
+
+.tel-mail span {
+  margin-left: 10px;
 }
 
 .tel-mail:hover,
@@ -303,9 +309,6 @@ img {
 .team-soc-item {
   width: 40px;
   height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .team-soc-item svg {
@@ -315,13 +318,15 @@ img {
 }
 
 .team-soc-item > a {
-  display: block;
   width: 100%;
   height: 100%;
   background-color: var(--main-white-color);
   color: var(--border-color);
   border: none;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .team-soc-item > a:hover,
@@ -354,22 +359,24 @@ img {
 .client-list {
   display: flex;
   gap: 30px;
-  justify-content: center;
+  align-items: center;
 }
 
 .client-item {
   width: calc((100% - 150px) / 6);
   height: 92px;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  /* align-items: center; */
+  display: block;
 }
 
 .client-item > a {
   width: 100%;
   height: 100%;
-  display: block;
+  display: flex;
   fill: var(--border-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
 }
 
 .client-item > a:hover,
@@ -377,12 +384,6 @@ img {
   fill: var(--main-blue-color);
   border: 1px solid var(--main-blue-color);
   border-radius: 4px;
-}
-
-.clients svg {
-  width: 106px;
-  height: 60px;
-  /* fill: currentColor; */
 }
 
 /* ---------------portfolio--------------- */
@@ -401,6 +402,14 @@ img {
 .portfolio-nav:focus {
   color: var(--main-white-color);
   background-color: var(--main-blue-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.portfolio-projects li:hover,
+.portfolio-projects li:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .portfolio {
@@ -427,7 +436,7 @@ img {
 }
 
 .portfolio-picture {
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--portfolio-border-color);
   border-top: none;
   padding: 20px 24px 20px 24px;
 }
@@ -457,6 +466,7 @@ img {
 
 .footer .container {
   display: flex;
+  align-items: baseline;
 }
 
 .footer-contact {
@@ -468,7 +478,7 @@ img {
   margin-bottom: 20px;
 }
 
-.footer h3 {
+.footer p {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
@@ -478,39 +488,34 @@ img {
   text-transform: uppercase;
   color: var(--main-white-color);
   margin-bottom: 20px;
-  padding-top: 12px;
 }
 
-.footer-soc-list li:nth-child(1) {
-  background-image: url(../images/instagram.svg);
-}
-
-.footer-soc-list li:nth-child(2) {
-  background-image: url(../images/twitter.svg);
-}
-
-.footer-soc-list li:nth-child(3) {
-  background-image: url(../images/facebook.svg);
-}
-
-.footer-soc-list li:nth-child(4) {
-  background-image: url(../images/linkedin.svg);
-}
-
-.footer-soc-list li {
-  display: inline-block;
+.footer-icon {
   width: 44px;
   height: 44px;
-  border-radius: 50%;
+}
+
+.footer-icon > a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  color: var(--main-white-color);
   background-color: var(--footer-bg-soc);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 20px;
+  border-radius: 50%;
+  border: none;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer-soc-list {
   display: flex;
   gap: 10px;
+}
+
+.footer-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
 }
 
 .address {
@@ -545,7 +550,7 @@ img {
   color: var(--main-blue-color);
 }
 
-.footer-soc-list li:hover,
-.footer-soc-list li:focus {
+.footer-icon > a:hover,
+.footer-icon > a:focus {
   background-color: var(--main-blue-color);
 }
